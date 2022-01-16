@@ -8,7 +8,12 @@ class Popup extends Component {
         roomId: localStorage.getItem('roomId')
             ? localStorage.getItem('roomId')
             : this.generateRoomId(),
-        content: localStorage.getItem('content'),
+        content: localStorage.getItem('content')
+            ? localStorage.getItem('content')
+            : '',
+        textBody: localStorage.getItem('content')
+            ? localStorage.getItem('content')
+            : '',
     };
 
     serverURL = 'https://revisionsocketserver.herokuapp.com/';
@@ -18,8 +23,7 @@ class Popup extends Component {
     componentDidMount(): void {
         this.connectSocket();
         this.socket.on('text', content => {
-            console.log(content);
-            localStorage.setItem('content', content);
+            this.displayContent(content);
         });
     }
 
@@ -30,8 +34,9 @@ class Popup extends Component {
         if (prevState.roomId !== this.state.roomId) {
             this.leaveRoom(prevState.roomId);
             this.joinRoom();
-        } else if (prevState.content !== this.state.content) {
-            this.displayContent();
+        }
+        if (prevState.content !== this.state.content) {
+            this.setState({ textBody: this.state.content });
         }
     }
 
@@ -56,14 +61,10 @@ class Popup extends Component {
     }
 
     delete = () => {
-        localStorage.removeItem('content');
-        (document.getElementById('copyText') as HTMLInputElement).value = '';
+        this.setState({ content: '' });
     };
 
-    displayContent() {
-        const content = (
-            document.getElementById('copyText') as HTMLInputElement
-        ).value;
+    displayContent(content: string) {
         this.setState({ content });
         localStorage.setItem('content', content);
     }
@@ -100,10 +101,10 @@ class Popup extends Component {
                             id="copyText"
                             className="p-1 rounded-lg text-base w-textBoxWidth h-textBoxHeight bg-textBoxBackground"
                             name="copyText"
-                            placeholder="Generate a key and take a screenshot of your notes to start using Study Mate."
-                        >
-                            {localStorage.getItem('content')}
-                        </textarea>
+                            placeholder="Generate a key and take a screenshot of your notes to Astart using Study Mate."
+                            value={this.state.content}
+                        ></textarea>
+                        <p>{this.state.textBody}</p>
                         <div className="p-3 flex flex-row justify-between">
                             <button type="button" onClick={() => this.delete()}>
                                 <p id="delete">Delete</p>
