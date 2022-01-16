@@ -1,6 +1,6 @@
 # reVision Extension
 
-![Example](https://user-images.githubusercontent.com/68607795/149648045-db87050e-bfdd-4f5a-9e39-2a4b38b40c07.png)
+![Example](https://user-images.githubusercontent.com/68607795/149649645-b65144f7-5bbc-451b-9982-3562a750766f.png)
 
 This is a Chrome extension that was built to work seamlessly with the reVision Socket Server by accepting a JSON object that has an ID (roomId) and text content (content). This extension sets the Id and text to local storage, and the extension will pull the data that already exists. If none is available, the user has the ability to generate their own ID to use.
 
@@ -38,3 +38,5 @@ npm run build
 ### 7. Open the dist folder inside of the project folder (nwPlusExtension).
 ![Example4](https://user-images.githubusercontent.com/68607795/149648316-c9624e63-3027-4d3d-93b4-ffe223b43d5e.png)
 
+### 8. The reVision extension is now available for use! 
+![Example](https://user-images.githubusercontent.com/68607795/149649645-b65144f7-5bbc-451b-9982-3562a750766f.png)
