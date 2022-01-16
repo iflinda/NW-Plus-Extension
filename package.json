@@ -1,6 +1,6 @@
 {
-  "name": "web-extension-ts-starter",
-  "description": "Web Extension Starter",
+  "name": "revision-starter",
+  "description": "The reVision Extension was created to work seamlessly with the reVision Socket Server.",
   "version": "1.0.0",
   "main": "server.ts",
   "directories": {
@@ -22,7 +22,7 @@
     "Brave",
     "React"
   ],
-  "author": "BCIT-DDC",
+  "author": "reVision",
   "license": "GNUV3",
   "scripts": {
     "build": "npm run clean && webpack --config webpack/webpack.prod.js",
