@@ -9,30 +9,30 @@ Please note that this web extension starter repository was created via the start
 
 ## Instructions
 
-###1. Clone the Repository.
+### 1. Clone the Repository.
 ```
 https://github.com/iflinda/nwPlusExtension.git
 ```
 
-###2. Open the folder from the terminal.
+### 2. Open the folder from the terminal.
 ```
 cd nwPlusExtension
 ```
 
-###3.  Install any dependences.
+### 3.  Install any dependences.
 ```
 npm install
 ```
 
-###4. Build the production environment.
+### 4. Build the production environment.
 ```
 npm run build
 ```
 
-###5. Open your Chrome browser and go to chrome://extensions
+### 5. Open your Chrome browser and go to chrome://extensions
 ![Example2](https://user-images.githubusercontent.com/68607795/149648082-3e00fd97-b592-4f26-967b-bafa5d2a0bb8.png)
 
-###6. Click on Load unpacked
+### 6. Click on Load unpacked
 ![Example3](https://user-images.githubusercontent.com/68607795/149648100-6a6e796f-c7e1-41c4-bb80-caf670f2f66f.png)
 
-###7. Open the dist folder inside of the project folder.
+### 7. Open the dist folder inside of the project folder.
