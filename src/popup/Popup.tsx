@@ -4,6 +4,11 @@ import io, { Socket } from 'socket.io-client';
 // import { browser, Tabs } from 'webextension-polyfill-ts';
 
 class Popup extends Component {
+    constructor(props: any) {
+        super(props);
+        
+    }
+
     state = {
         roomId: localStorage.getItem('roomId')
             ? localStorage.getItem('roomId')
@@ -99,12 +104,11 @@ class Popup extends Component {
                     <form className="p-5 font-p">
                         <textarea
                             id="copyText"
-                            className="p-1 rounded-lg text-base w-textBoxWidth h-textBoxHeight bg-textBoxBackground"
+                            className="p-1 rounded-lg text-base w-textBoxWidth h-textBoxHeight bg-textBoxBackground outline-none focus:border-0 active:border-0"
                             name="copyText"
                             placeholder="Generate a key and take a screenshot of your notes to Astart using Study Mate."
                             value={this.state.content}
                         ></textarea>
-                        <p>{this.state.textBody}</p>
                         <div className="p-3 flex flex-row justify-between">
                             <button type="button" onClick={() => this.delete()}>
                                 <p id="delete">Delete</p>
