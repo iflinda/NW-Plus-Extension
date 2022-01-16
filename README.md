@@ -11,7 +11,7 @@ Please note that this web extension starter repository was created via the start
 
 ### 1. Clone the Repository.
 ```
-https://github.com/iflinda/nwPlusExtension.git
+git clone https://github.com/iflinda/nwPlusExtension.git
 ```
 
 ### 2. Open the folder from the terminal.
@@ -35,4 +35,6 @@ npm run build
 ### 6. Click on Load unpacked
 ![Example3](https://user-images.githubusercontent.com/68607795/149648100-6a6e796f-c7e1-41c4-bb80-caf670f2f66f.png)
 
-### 7. Open the dist folder inside of the project folder.
+### 7. Open the dist folder inside of the project folder (nwPlusExtension).
+![Example4](https://user-images.githubusercontent.com/68607795/149648316-c9624e63-3027-4d3d-93b4-ffe223b43d5e.png)
+
