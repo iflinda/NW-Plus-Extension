@@ -11,7 +11,7 @@ This is a Chrome extension that was built to work seamlessly with the reVision S
 -   Extension: https://github.com/iflinda/nwPlusExtension
 
 ## Important Acknowledgements
-Please note that this web extension starter repository was created via the starter template available at: https://github.com/BCIT-DDC/web-extension-ts-starter created by Jamie Samuel (https://github.com/jsam07). No existing logic was used to create this extension.
+Please note that this web extension was created via the starter template available at: https://github.com/BCIT-DDC/web-extension-ts-starter created by Jamie Samuel (https://github.com/jsam07). No existing logic was used to create this extension.
 
 ## Instructions
 
