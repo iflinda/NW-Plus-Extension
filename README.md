@@ -5,9 +5,10 @@
 This is a Chrome extension that was built to work seamlessly with the reVision Socket Server by accepting a JSON object that has an ID (roomId) and text content (content). This extension sets the Id and text to local storage, and the extension will pull the data that already exists. If none is available, the user can generate their ID to use.
 
 ## reVision Application
-Front-end Application: https://github.com/jdhanju/nwhacks-2022-app
-Processing API: https://github.com/jsam07/text-recognition-api
-Socket Server: https://github.com/matteomiceli/nwHacksSocketServer
+-   Front-end Application: https://github.com/jdhanju/nwhacks-2022-app
+-   Processing API: https://github.com/jsam07/text-recognition-api
+-   Socket Server: https://github.com/matteomiceli/nwHacksSocketServer
+-   Extension: https://github.com/iflinda/nwPlusExtension
 
 ## Important Acknowledgements
 Please note that this web extension starter repository was created via the starter template available at: https://github.com/BCIT-DDC/web-extension-ts-starter created by Jamie Samuel (https://github.com/jsam07). No existing logic was used to create this extension.
