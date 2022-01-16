@@ -2,10 +2,15 @@
 
 ![Example](https://user-images.githubusercontent.com/68607795/149649675-2640d16f-48b9-4459-9e86-9c4d09dd246d.png)
 
-This is a Chrome extension that was built to work seamlessly with the reVision Socket Server by accepting a JSON object that has an ID (roomId) and text content (content). This extension sets the Id and text to local storage, and the extension will pull the data that already exists. If none is available, the user has the ability to generate their own ID to use.
+This is a Chrome extension that was built to work seamlessly with the reVision Socket Server by accepting a JSON object that has an ID (roomId) and text content (content). This extension sets the Id and text to local storage, and the extension will pull the data that already exists. If none is available, the user can generate their ID to use.
 
-## Important
-Please note that this web extension starter repository was created via the starter code available at: https://github.com/BCIT-DDC/web-extension-ts-starter created by Jamie Samuel (https://github.com/jsam07). No existing logic was used to create this extension.
+## reVision Application
+Front-end Application: https://github.com/jdhanju/nwhacks-2022-app
+Processing API: https://github.com/jsam07/text-recognition-api
+Socket Server: https://github.com/matteomiceli/nwHacksSocketServer
+
+## Important Acknowledgements
+Please note that this web extension starter repository was created via the starter template available at: https://github.com/BCIT-DDC/web-extension-ts-starter created by Jamie Samuel (https://github.com/jsam07). No existing logic was used to create this extension.
 
 ## Instructions
 
@@ -19,7 +24,7 @@ git clone https://github.com/iflinda/nwPlusExtension.git
 cd nwPlusExtension
 ```
 
-### 3.  Install any dependences.
+### 3.  Install any dependencies.
 ```
 npm install
 ```
@@ -41,3 +46,14 @@ npm run build
 ### 8. The reVision extension is now available for use! 
 ![Example 5](https://user-images.githubusercontent.com/68607795/149649705-39e2b70f-b118-4fd0-babe-bdffd3aadf31.png)
 
+## Team
+-   Jamie Samuel (https://github.com/jsam07/)
+-   Jaiveer Dhanju (https://github.com/jdhanju)
+-   Linda Ngoc Nguyen (https://github.com/iflinda)
+-   Matteo Miceli (https://github.com/matteomiceli)
+
+## Built With
+-   ![React](https://img.shields.io/badge/-React-050B1E?&logo=React)
+-   ![TypeScript](https://img.shields.io/badge/-TypeScript-050B1E?&logo=TypeScript)
+-   ![Webpack](https://img.shields.io/badge/-Webpack.js-050B1E?&logo=webpack)
+-   ![TailwindCSS](https://img.shields.io/badge/-Tailwind_CSS-050B1E?&logo=tailwind-css)
