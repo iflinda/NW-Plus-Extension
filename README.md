@@ -1,6 +1,6 @@
 # reVision Extension
 
-![Example](https://user-images.githubusercontent.com/68607795/149649645-b65144f7-5bbc-451b-9982-3562a750766f.png)
+![Example](https://user-images.githubusercontent.com/68607795/149649675-2640d16f-48b9-4459-9e86-9c4d09dd246d.png)
 
 This is a Chrome extension that was built to work seamlessly with the reVision Socket Server by accepting a JSON object that has an ID (roomId) and text content (content). This extension sets the Id and text to local storage, and the extension will pull the data that already exists. If none is available, the user has the ability to generate their own ID to use.
 
@@ -39,4 +39,5 @@ npm run build
 ![Example4](https://user-images.githubusercontent.com/68607795/149648316-c9624e63-3027-4d3d-93b4-ffe223b43d5e.png)
 
 ### 8. The reVision extension is now available for use! 
-![Example](https://user-images.githubusercontent.com/68607795/149649645-b65144f7-5bbc-451b-9982-3562a750766f.png)
+![Example 5](https://user-images.githubusercontent.com/68607795/149649705-39e2b70f-b118-4fd0-babe-bdffd3aadf31.png)
+
