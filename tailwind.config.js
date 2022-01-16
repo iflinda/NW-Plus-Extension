@@ -9,15 +9,17 @@ module.exports = {
             colors: {
                 background: '#8BAA9F',
                 textBoxBackground: '#E3E3E3',
-                generateBackground: '#6CA389',
+                generateBackground: '#9D9D9D',
             },
             width: {
                 textBoxWidth: '200px',
                 generateWidth: '100px',
                 keyWidth: '100px',
+                buttonWidth: '50px',
             },
             height: {
                 textBoxHeight: '190px',
+                buttonHeight: '50px',
             },
         },
     },

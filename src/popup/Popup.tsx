@@ -35,11 +35,12 @@ class Popup extends Component {
         return (
             <div className="container flex flex-col text-center">
                 <div className="w-full bg-background font-h1 text-xl text-white p-3">
-                    <h1>Study Mate</h1>
+                    <h1>reVision</h1>
                 </div>
                 <div>
                     <div className="flex flex-row justify-center pt-5">
                         <button
+                            id="generate"
                             type="button"
                             className="bg-generateBackground w-generateWidth font-p text-lg text-white rounded-l-lg"
                             onClick={() => this.generateRoomId()}
@@ -55,14 +56,20 @@ class Popup extends Component {
                             id="copyText"
                             className="p-1 rounded-lg text-base w-textBoxWidth h-textBoxHeight bg-textBoxBackground"
                             name="copyText"
-                            placeholder="Generate a key and take a screenshot of your notes to start using Study Mate."
+                            placeholder="Generate a key and take a screenshot of your notes to start using reVision."
                         >
                             {localStorage.getItem('content')}
                         </textarea>
-                        <div className="p-3 flex flex-row justify-between">
-                            <button type="button" onClick={() => this.delete()}>
-                                <p id="delete">Delete</p>
+                        <div className="p-3 flex flex-row justify-between w-textBoxWidth mx-auto">
+                            <button
+                                id="delete"
+                                className="w-buttonWidth h-buttonHeight rounded"
+                                type="button"
+                                onClick={() => this.delete()}
+                            >
+                                <p>Delete</p>
                                 <svg
+                                    className="mx-auto"
                                     width="24"
                                     height="24"
                                     viewBox="0 0 24 24"
@@ -75,9 +82,15 @@ class Popup extends Component {
                                     />
                                 </svg>
                             </button>
-                            <button type="button" onClick={() => this.copy()}>
-                                <p id="copy">Copy</p>
+                            <button
+                                id="copy"
+                                className="w-buttonWidth h-buttonHeight rounded"
+                                type="button"
+                                onClick={() => this.copy()}
+                            >
+                                <p>Copy</p>
                                 <svg
+                                    className="mx-auto"
                                     width="24"
                                     height="24"
                                     viewBox="0 0 24 24"
