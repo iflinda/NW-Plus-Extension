@@ -1,30 +1,38 @@
+/* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import io, { Socket } from 'socket.io-client';
+import { browser } from 'webextension-polyfill-ts';
+import {
+    joinRoom,
+    leaveRoom,
+    getRoom,
+    generateRoom,
+    getContent,
+} from '../ContentScript/index';
 // import { browser, Tabs } from 'webextension-polyfill-ts';
 
-class Popup extends Component {
-    state = {
-        roomId: localStorage.getItem('roomId')
-            ? localStorage.getItem('roomId')
-            : this.generateRoomId(),
-        content: localStorage.getItem('content')
-            ? localStorage.getItem('content')
-            : '',
-        textBody: localStorage.getItem('content')
-            ? localStorage.getItem('content')
-            : '',
-    };
+class Popup extends Component<{}, any> {
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            roomId: '',
+            content: '',
+        };
+        this.displayContent(this.state.content);
+    }
 
-    serverURL = 'https://revisionsocketserver.herokuapp.com/';
+    async componentDidMount() {
+        console.log('etst');
+        const room = await getRoom();
+        this.setState({ roomId: await room.res });
+        console.log(this.state.roomId);
+        joinRoom(this.state.roomId);
 
-    socket: Socket;
-
-    componentDidMount(): void {
-        this.connectSocket();
-        this.socket.on('text', content => {
-            this.displayContent(content);
-        });
+        const content = await getContent();
+        console.log(await content);
+        this.setState({ content: await content.res });
+        this.displayContent(this.state.content);
     }
 
     componentDidUpdate(
@@ -32,32 +40,14 @@ class Popup extends Component {
         prevState: { roomId: string; content: string },
     ) {
         if (prevState.roomId !== this.state.roomId) {
-            this.leaveRoom(prevState.roomId);
-            this.joinRoom();
+            leaveRoom(prevState.roomId);
+            joinRoom(this.state.roomId);
         }
-        if (prevState.content !== this.state.content) {
-            this.setState({ textBody: this.state.content });
-        }
-    }
-
-    connectSocket(): void {
-        const connection = io(this.serverURL);
-        this.socket = connection;
-        this.joinRoom();
-    }
-
-    joinRoom(): void {
-        this.socket.emit('join', this.state.roomId);
-    }
-
-    leaveRoom(roomId: string): void {
-        this.socket.emit('leave', roomId);
     }
 
     generateRoomId(): void {
-        const id = Math.floor(Math.random() * 899999 + 100000);
-        this.setState({ roomId: id.toString() });
-        localStorage.setItem('roomId', id.toString());
+        const id = generateRoom();
+        this.setState({ roomId: id });
     }
 
     delete = () => {
@@ -66,7 +56,6 @@ class Popup extends Component {
 
     displayContent(content: string) {
         this.setState({ content });
-        localStorage.setItem('content', content);
     }
 
     copy = () => {
