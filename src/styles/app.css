@@ -14,11 +14,6 @@ textarea {
     resize: none;
 }
 
-#generate:hover {
-    background-color: #6CA389;
-}
-
-#delete:hover,
 #copy:hover {
-    background-color: #CCE9D4;
+    background-color: #cce9d4;
 }

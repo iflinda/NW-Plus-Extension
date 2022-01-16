@@ -4,10 +4,6 @@ import io, { Socket } from 'socket.io-client';
 // import { browser, Tabs } from 'webextension-polyfill-ts';
 
 class Popup extends Component {
-    constructor(props: any) {
-        super(props);
-    }
-
     state = {
         roomId: localStorage.getItem('roomId')
             ? localStorage.getItem('roomId')
@@ -84,7 +80,7 @@ class Popup extends Component {
     render() {
         return (
             <div className="container flex flex-col text-center">
-                <div className="w-full flex flex-row bg-background font-h1 text-xl text-white p-3 justify-center">
+                <div className="w-full flex flex-row bg-background font-h1 text-xl text-white px-3 pt-3 pb-2 justify-center">
                     <svg
                         width="34"
                         height="26"
@@ -110,15 +106,13 @@ class Popup extends Component {
                     <h1 className="pl-1">reVision</h1>
                 </div>
                 <div>
-                    <div className="flex flex-row justify-center pt-5">
-                        <button
+                    <div className="flex flex-row justify-center items-center pt-5">
+                        <div
                             id="generate"
-                            type="button"
-                            className="bg-generateBackground w-generateWidth font-p text-white rounded-l-lg"
-                            onClick={() => this.generateRoomId()}
+                            className="h-full bg-generateBackground w-generateWidth text-lg font-p text-white rounded-l-lg"
                         >
-                            ID
-                        </button>
+                            Sync ID
+                        </div>
                         <p className="bg-textBoxBackground w-keyWidth px-5 font-p text-lg rounded-r-lg">
                             {localStorage.getItem('roomId')}
                         </p>
@@ -134,7 +128,7 @@ class Popup extends Component {
                         <div className="p-3 flex flex-row justify-between">
                             <button
                                 id="delete"
-                                className="w-buttonWidth h-buttonHeight rounded font-bold"
+                                className="w-buttonWidth h-buttonHeight rounded font-bold hover:bg-red-200"
                                 type="button"
                                 onClick={() => this.delete()}
                             >
@@ -185,6 +179,12 @@ class Popup extends Component {
                                 </svg>
                             </button>
                         </div>
+                        <button
+                            className="text-gray-500 hover:underline"
+                            onClick={() => this.generateRoomId()}
+                        >
+                            Generate new sync id
+                        </button>
                     </form>
                 </div>
             </div>
