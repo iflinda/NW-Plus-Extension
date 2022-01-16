@@ -6,7 +6,6 @@ import io, { Socket } from 'socket.io-client';
 class Popup extends Component {
     constructor(props: any) {
         super(props);
-        
     }
 
     state = {
@@ -115,10 +114,10 @@ class Popup extends Component {
                         <button
                             id="generate"
                             type="button"
-                            className="bg-generateBackground w-generateWidth font-p text-lg text-white rounded-l-lg"
+                            className="bg-generateBackground w-generateWidth font-p text-white rounded-l-lg"
                             onClick={() => this.generateRoomId()}
                         >
-                            Generate
+                            ID
                         </button>
                         <p className="bg-textBoxBackground w-keyWidth px-5 font-p text-lg rounded-r-lg">
                             {localStorage.getItem('roomId')}
@@ -133,8 +132,13 @@ class Popup extends Component {
                             value={this.state.content}
                         ></textarea>
                         <div className="p-3 flex flex-row justify-between">
-                            <button type="button" onClick={() => this.delete()}>
-                                <p id="delete">Delete</p>
+                            <button
+                                id="delete"
+                                className="w-buttonWidth h-buttonHeight rounded font-bold"
+                                type="button"
+                                onClick={() => this.delete()}
+                            >
+                                <p>Delete</p>
                                 <svg
                                     className="mx-auto"
                                     width="24"
@@ -155,7 +159,7 @@ class Popup extends Component {
                                 type="button"
                                 onClick={() => this.copy()}
                             >
-                                <p>Copy</p>
+                                <p className="font-bold">Copy</p>
                                 <svg
                                     className="mx-auto"
                                     width="24"
