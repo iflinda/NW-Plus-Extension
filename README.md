@@ -5,10 +5,27 @@
 This is a Chrome extension that was built to work seamlessly with the reVision Socket Server by accepting a JSON object that has an ID (roomId) and text content (content). This extension sets the Id and text to local storage, and the extension will pull the data that already exists. If none is available, the user can generate their ID to use.
 
 ## reVision Application
--   Front-end Application: https://github.com/jdhanju/nwhacks-2022-app
--   Processing API: https://github.com/jsam07/text-recognition-api
--   Socket Server: https://github.com/matteomiceli/nwHacksSocketServer
--   Extension: https://github.com/iflinda/nwPlusExtension
+The reVision application has four major components that allow the application to work seamlessly together. 
+
+- ### Front-end Application
+    - https://github.com/jdhanju/nwhacks-2022-app
+    - The Front-end Application allows the user to upload their photo where it is then sent to the Processing API to be converted to text.
+    - _Technologies: React, Next.js, Tailwind CSS, ESLint, and Prettier_
+
+- ### Processing API
+    - https://github.com/jsam07/text-recognition-api
+    - The Processing API is an OCR & HCR based API that transcribes an image to text using a combination of Microsoft Cognitive Services and Google's Cloud Vision API. The text is sent back to the front-end application after processing.
+    - _Technologies: JavaScript (ES6), TypeScript, Docker, Microsoft Cognitive Services, Google's Cloud Vision API, ESLint, and Prettier_
+
+- ### Socket Server
+    - https://github.com/matteomiceli/nwHacksSocketServer
+    - The Socket Server facilitates communication between the front-end application and the extension. It accepts an object from the front-end application that contains the ID (roomId) and text (content) and sends that information to the browser extension.
+    - _Technologies: JavaScript (ES6), Socket.io, ESLint, Prettier_
+
+- ### Browser Extension
+    - https://github.com/iflinda/nwPlusExtension
+    - The Browser Extension listens to the Socket Server and accepts an object that contains the ID (roomId) and text (content). After receiving an ID match, the content is shown as text in the extension; thus, allowing for users to copy and paste the text.
+    - _Technologies: React, TypeScript, Webpack.js, Tailwind CSS, ESLint, and Prettier_
 
 ## Important Acknowledgements
 Please note that this web extension was created via the starter template available at: https://github.com/BCIT-DDC/web-extension-ts-starter created by Jamie Samuel (https://github.com/jsam07). No existing logic was used to create this extension.
